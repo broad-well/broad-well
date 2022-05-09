@@ -38,7 +38,7 @@ const filterKeys: {[key: string]: string} = {
     languages: 'Language',
     frameworks: 'Framework',
     platforms: 'Platform',
-    techniques: 'Methodology'
+    techniques: 'Technique'
 }
 
 export function ProjectCollection() {
@@ -49,24 +49,22 @@ export function ProjectCollection() {
     const filterer = (filter: {[k: string]: string}) =>
         (proj: Project) => Object.entries(filter).every(([key, target]) => target === '' || proj[key].includes(target))
 
-    React.useEffect(() => console.log({order, filter}), [order, filter])
-
     const projectList = projects.filter(filterer(filter)).sort(comparators[order].comp)
     return <><div className="p-4 flex flex-col md:flex-row flex-wrap">
-        <select id="sort" className="p-1 m-1 mr-4 bg-slate-200 dark:bg-slate-800 rounded-md" onChange={evt => setOrder(evt.target.value)} value={order}>
+        <select title="Select sorting method" id="sort" className="max-w-full p-1 m-1 mr-4 bg-slate-200 dark:bg-slate-800 rounded-md" onChange={evt => setOrder(evt.target.value)} value={order}>
             {Object.entries(comparators).map(c =>
                 <option key={c[0]} value={c[0]}>{'Sort: ' + c[1].name}</option>)}
         </select>
         {Object.entries(filterKeys).map(([key, name]) => 
-        <select id={'filter-' + key} className="p-1 m-1 mr-4 bg-slate-200 dark:bg-slate-800 rounded-md" onChange={evt => setFilter({ ...filter, [key]: evt.target.value})} value={filter[key]}>
+        <select title={'Filter by ' + key} key={key} id={'filter-' + key} className="max-w-full p-1 m-1 mr-4 bg-slate-200 dark:bg-slate-800 rounded-md" onChange={evt => setFilter({ ...filter, [key]: evt.target.value})} value={filter[key]}>
             <option key='all' value=''>{name + ': All'}</option>
             {Array.from(new Set(projects.flatMap(proj => proj[key]))).map(val =>
                 <option key={val} value={val}>{name + ': ' + val}</option>)}
         </select>)}
     </div>
     <main className="lg:flex lg:flex-wrap">
-        {projectList.length === 0 ? <i className="p-6">No projects match the selected filters.</i> : 
-            projectList.map(p => <div className="md:basis-1/3 lg:basis-1/2"><ProjectCard project={p} /></div>)}
+        {projectList.length === 0 ? <i className="ml-6">No projects match the selected filters.</i> : 
+            projectList.map(p => <div key={p.name} className="md:basis-1/3 lg:basis-1/2"><ProjectCard project={p} /></div>)}
     </main></>
 }
 

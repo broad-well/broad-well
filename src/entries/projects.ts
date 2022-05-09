@@ -37,7 +37,7 @@ const projects: Project[] = [
         techniques: ['Git'],
         mediaUrls: ['assets/plinq.png'],
         tagline: 'A browser extension that helps you track, chronicle, and maintain your professional connections',
-        description: 'I collaborate with a team of 5 members at V1 Product Studio to design, build, and promote Plinq. I built an embedded sidebar that helps users import contacts from LinkedIn.',
+        description: 'I collaborate with a team of 5 members at <a href="https://studio.v1michigan.com/" target="_blank">V1 Product Studio</a> to design, build, and promote Plinq. I built an embedded sidebar that helps users import contacts from LinkedIn.',
         frameworks: ["Next.js"],
         date: [2022, null],
         rank: {

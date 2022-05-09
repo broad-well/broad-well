@@ -11,6 +11,7 @@ const { title } = Astro.props as Props;
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
+  <meta name="description" content="From web apps to CPU emulators, Broadwell's software projects illustrate his skills and diverse technical interests.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -31,8 +32,8 @@ const { title } = Astro.props as Props;
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --color-text: rgb(230, 230, 230);
-      --bg-color: rgb(22, 22, 28);
+      --color-text: rgb(239, 239, 239);
+      --bg-color: rgb(23, 23, 27);
     }
   }
 
@@ -50,5 +51,15 @@ const { title } = Astro.props as Props;
   :global(code) {
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+
+</style>
+<style lang="scss">
+  :global(.description) {
+    @apply text-gray-800 dark:text-gray-200;
+  }
+
+  :global(.description a) {
+    @apply text-gray-600 dark:text-gray-300;
   }
 </style>
