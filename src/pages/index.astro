@@ -1,0 +1,28 @@
+---
+import Layout from '../components/Layout.astro'
+import { GitHub, Linkedin, Mail, FileText } from 'react-feather'
+import projects from '../entries/projects'
+import ProjectCard from '../components/ProjectCard.astro'
+---
+
+<Layout title="Broadwell's Projects">
+	<header class="p-8 mb-4">
+		<h1 class="text-3xl font-bold mb-2">Broadwell's Projects</h1>
+		<div class="flex">
+			<a class="mr-2" href="https://github.com/broad-well" target="_self"><GitHub /></a>
+			<a class="mr-2" href="https://www.linkedin.com/in/michael-peng-0a669617b/" target="_self"><Linkedin /></a>
+			<a class="mr-2" href="mailto:broadwell+broaderator@broaderator.com"><Mail /></a>
+			<a href="assets/master.pdf" target="_blank"><FileText /></a>
+		</div>
+	</header>
+	<main class="lg:flex lg:flex-wrap">
+		{projects.map(p => <div class="md:basis-1/3 lg:basis-1/2 p-2"><ProjectCard project={p} /></div>)}
+	</main>
+	<footer class="p-4 text-right">
+		&copy; 2022 Michael Peng
+	</footer>
+</Layout>
+
+<style>
+	
+</style>
