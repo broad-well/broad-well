@@ -11,6 +11,9 @@ const { title } = Astro.props as Props;
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<title>{title}</title>
 </head>
@@ -22,14 +25,22 @@ const { title } = Astro.props as Props;
 <style>
   :root {
     --font-size-base: 1rem;
-
     --color-text: hsl(12, 5%, 4%);
+    --bg-color: #fafafa;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-text: rgb(230, 230, 230);
+      --bg-color: rgb(22, 22, 28);
+    }
   }
 
   html {
-    font-family: system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif !important;
     font-size: var(--font-size-base);
     color: var(--color-text);
+    background-color: var(--bg-color);
   }
 
   body {

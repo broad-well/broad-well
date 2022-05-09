@@ -62,7 +62,7 @@ const projects: Project[] = [
             impressive: 0.76,
             collaborative: 0.1,
             original: 0.7,
-            complex: 0.7,
+            complex: 0.5,
             algorithmic: 0.6
         }
     },
@@ -81,7 +81,7 @@ const projects: Project[] = [
             impressive: 0.25,
             collaborative: 0.05,
             original: 0.4,
-            complex: 0.3,
+            complex: 0.25,
             algorithmic: 0.15
         }
     },
@@ -128,9 +128,9 @@ const projects: Project[] = [
         platforms: ['Web', 'Plotly Dash'],
         frameworks: ['WebSocket'],
         date: [2022, 2022],
-        mediaUrls: ['assets/placepixels.png', 'assets/mdirector.png'],
+        mediaUrls: ['assets/mdirector.png', 'assets/placepixels.png'],
         tagline: 'A centrally controlled network of bots that protected artwork on the Reddit r/place canvas',
-        description: 'To make distributed r/place bots coordinate placements and follow group directions, I built an r/place bot client that drew pixels on r/place according to WebSocket commands from a central botnet director server. I also developed a live web dashboard that visualized all botnet activity. At its peak, the botnet had 7 bots in operation.',
+        description: 'To make distributed r/place bots coordinate placements and follow group directions, I built an r/place bot client that drew pixels on r/place according to WebSocket commands from a central botnet director server and completed the implementation in <12 hours. I also developed a live web dashboard that visualized all botnet activity. At its peak, the botnet had 7 bots in operation.',
         link: 'https://github.com/broad-well/reddit-place-umich-botnet',
         rank: {
             impressive: 0.52,
@@ -155,7 +155,7 @@ const projects: Project[] = [
             impressive: 0.7,
             collaborative: 0.1,
             original: 0.7,
-            complex: 0.6,
+            complex: 0.7,
             algorithmic: 0.75
         }
     },
@@ -165,7 +165,7 @@ const projects: Project[] = [
         techniques: ['Git'],
         platforms: ['Firebase', 'Web'],
         frameworks: ['Svelte'],
-        mediaUrls: ['assets/ams.png'],
+        mediaUrls: ['assets/ams-request.png', 'assets/ams.png'],
         date: [2020, 2021],
         tagline: 'A platform where Andover Robotics Club (ARC) signed up for meeting slots, assigned seats, tracked attendance, and could perform contact tracing during the 2020-2021 season',
         description: 'To help ARC fulfill its logistical requirements during its first season under COVID-19, I initiated, built, and deployed the Attendance Management System (AMS) using Svelte, Firebase Web, and Firestore. I also configured Webhooks to notify the club\'s Discord server about attendance requests and approvals. The club used the ARC AMS to manage all official in-person meetings during the 2020-2021 season.',
@@ -185,6 +185,7 @@ const projects: Project[] = [
         platforms: [],
         frameworks: [],
         date: [2020, 2020],
+        mediaUrls: ['assets/teammaker.png'],
         tagline: 'A program that optimally assigns members of Andover Robotics Club (ARC) to competition teams according to their skills, interests, and preferences',
         description: "To ensure that ARC's three competition teams are balanced in strengths and educational opportunities, I wrote a program in Julia that, given club members' strengths, interests, and preferences, generates an optimal team assignment for each member. True team assignments in the 2020-2021 season were based on this program's output and led every team to unprecedented success.",
         link: 'https://github.com/Andover-Robotics/TeamMaker',
@@ -230,7 +231,7 @@ const projects: Project[] = [
             impressive: 0.85,
             collaborative: 0.5,
             original: 0.7,
-            complex: 0.55,
+            complex: 0.6,
             algorithmic: 0.4
         }
     },
