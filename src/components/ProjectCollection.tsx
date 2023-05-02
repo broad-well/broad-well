@@ -32,8 +32,6 @@ const comparators: {[name: string]: {name: string, comp: (p1: Project, p2: Proje
     }
 }
 
-const filters: {[name: string]: {name: string, include: (p: Project) => boolean}} =
-    Object.fromEntries(projects.flatMap(proj => proj.languages).map(lang => [lang, {name: lang, include: p => p.languages.includes(lang)}]))
 const filterKeys: {[key: string]: string} = {
     languages: 'Language',
     frameworks: 'Framework',

@@ -9,6 +9,7 @@
     "resolveJsonModule": true,
     // Enable stricter transpilation for better output.
     "isolatedModules": true,
+    "jsx": "react-jsx",
     // Add type definitions for our Vite runtime.
     "types": ["vite/client"]
   }
