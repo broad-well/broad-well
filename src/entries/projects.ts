@@ -1,9 +1,9 @@
 export type Language =
     "C++" | "Rust" | "JavaScript" | "TypeScript" | "Python" | "HTML" | "CSS" | "F#" | "R" | "Julia" | "Ruby" | "Swift"
 export type Platform =
-    "Linux" | "Firebase" | "Google Cloud" | "AWS" | "Kubernetes" | "Web" | "Plotly Dash"
+    "Linux" | "Firebase" | "Google Cloud" | "AWS" | "Kubernetes" | "Web" | "Plotly Dash" | "Google Apps Script"
 export type Framework =
-    "React" | "Svelte" | "Next.js" | "Qt" | "WebSocket" | "Vue"
+    "React" | "Svelte" | "Next.js" | "Qt" | "WebSocket" | "Vue" | "Astro"
 export type Technique =
     "Test-Driven Development" | "Scrum" | "Git"
 
@@ -39,7 +39,7 @@ const projects: Project[] = [
         tagline: 'A browser extension that helps you track, chronicle, and maintain your professional connections',
         description: 'I collaborate with a team of 5 members at <a href="https://studio.v1michigan.com/" target="_blank">V1 Product Studio</a> to design, build, and promote Plinq. I built an embedded sidebar that helps users import contacts from LinkedIn.',
         frameworks: ["Next.js"],
-        date: [2022, null],
+        date: [2022, 2022],
         rank: {
             impressive: 0.65,
             collaborative: 0.9,
@@ -49,20 +49,22 @@ const projects: Project[] = [
         }
     },
     {
-        name: 'SchedOpt',
-        languages: ['C++', 'F#', 'HTML', 'CSS', 'JavaScript'],
-        platforms: ['Web', 'Linux'],
+        name: 'CourseKit',
+        languages: ['C++', 'F#', 'HTML', 'CSS', 'JavaScript', 'TypeScript'],
+        platforms: ['Web', 'Linux', 'AWS'],
         techniques: ['Git'],
-        mediaUrls: ['assets/schedopt-viewer.jpeg'],
-        frameworks: ['Qt'],
-        tagline: 'A platform that finds all feasible schedules given a list of university classes to take and ranks them according to customizable user preferences',
-        description: 'I built SchedOpt in F# during the summer before my freshman year of college and rewrote it in modern C++. 6 students have registered for classes according to schedules from SchedOpt and given positive feedback.', //  I am working on a public web interface where users can specify their desired classes and preferences and receive their schedules automatically.
+        mediaUrls: ['assets/coursekit-optimizer.png'],
+        frameworks: ['Astro', 'React'],
+        tagline: 'A unified platform that aims to streamline the entire course registration process at universities: course selection, schedule optimization, and class enrollment',
+        // F#, C++,
+        description: 'When building my first-semester schedule in summer 2021, I wrote a program in F# that searched for all possible schedules and sorted them according to my preferences. I developed several iterations of the optimizer in C++ and ran a successful pilot program in summer 2022 with about 50 Michigan students receiving optimal schedules. In winter 2023, I collaborated with a team to build and launch a self-serviceable web app for schedule optimization using Astro, React, TypeScript, and AWS, reaching over 300 users in just one month. We envision adding more course selection features and expanding to other universities.',
+        link: 'https://optimizer.plan.courses',
         date: [2021, null],
         rank: {
-            impressive: 0.76,
-            collaborative: 0.1,
-            original: 0.7,
-            complex: 0.5,
+            impressive: 0.9,
+            collaborative: 0.3,
+            original: 0.8,
+            complex: 0.7,
             algorithmic: 0.6
         }
     },
@@ -165,7 +167,7 @@ const projects: Project[] = [
         techniques: ['Git'],
         platforms: ['Firebase', 'Web'],
         frameworks: ['Svelte'],
-        mediaUrls: ['assets/ams-request.png', 'assets/ams.png'],
+        mediaUrls: ['assets/ams.png'],
         date: [2020, 2021],
         tagline: 'A platform where Andover Robotics Club (ARC) signed up for meeting slots, assigned seats, tracked attendance, and could perform contact tracing during the 2020-2021 season',
         description: 'To help ARC fulfill its logistical requirements during its first season under COVID-19, I initiated, built, and deployed the Attendance Management System (AMS) using Svelte, Firebase Web, and Firestore. I also configured Webhooks to notify the club\'s Discord server about attendance requests and approvals. The club used the ARC AMS to manage all official in-person meetings during the 2020-2021 season.',
@@ -203,7 +205,7 @@ const projects: Project[] = [
         techniques: ['Test-Driven Development', 'Git'],
         platforms: ['Web'],
         frameworks: ['Vue'],
-        date: [2019, null],
+        date: [2019, 2023],
         mediaUrls: ['assets/massscout.png', 'assets/massscout-analyze.png'],
         tagline: 'A browser extension that helps FIRST Tech Challenge (FTC) robotics teams in Massachusetts collect, share, and analyze other teams\' performance records',
         description: 'I proposed, developed, and deployed this browser extension to replace the original, tedious paper-driven system for team performance collection used by the MassScout Alliance. The alliance adopted this extension as its official data handling method, and 3 of the 4 top teams in Massachusetts in 2020 used this extension to evaluate other teams for their alliances.',
@@ -269,6 +271,24 @@ const projects: Project[] = [
             original: 0.25,
             complex: 0.55,
             algorithmic: 0.35
+        }
+    },
+    {
+        name: 'Shifter',
+        languages: ['TypeScript'],
+        techniques: [],
+        platforms: ['Google Apps Script'],
+        frameworks: [],
+        date: [2023, null],
+        tagline: 'A Google Sheets add-on that generates optimal work shift assignments using linear programming',
+        description: 'Responding to the work management needs of the Escher Co-op at the University of Michigan, I wrote a Google Sheets add-on in TypeScript that gathers work availability survey responses, formulates the construction of a work schedule using this availability data as a linear program, and solves the program using LinearOptimizationService. Escher\'s Work Manager has used Shifter to generate its work schedule for Spring-Summer 2023.',
+        link: 'https://broadwell.notion.site/Shifter-Documentation-56aff1ae197544369bb8fcb798d6663c',
+        rank: {
+            impressive: 0.7,
+            collaborative: 0.15,
+            original: 0.35,
+            complex: 0.3,
+            algorithmic: 0.45
         }
     }
 ]
