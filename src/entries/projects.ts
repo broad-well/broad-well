@@ -1,11 +1,11 @@
 export type Language =
-    "C++" | "Rust" | "JavaScript" | "TypeScript" | "Python" | "HTML" | "CSS" | "F#" | "R" | "Julia" | "Ruby" | "Swift"
+    'C++' | 'C#' | 'Rust' | 'JavaScript' | 'TypeScript' | 'Python' | 'HTML' | 'CSS' | 'F#' | 'R' | 'Julia' | 'Ruby' | 'Swift' | 'SQL'
 export type Platform =
-    "Linux" | "Firebase" | "Google Cloud" | "AWS" | "Kubernetes" | "Web" | "Plotly Dash" | "Google Apps Script"
+    'Linux' | 'Firebase' | 'Google Cloud' | 'AWS' | 'Kubernetes' | 'Web' | 'Plotly Dash' | 'Google Apps Script'
 export type Framework =
-    "React" | "Svelte" | "Next.js" | "Qt" | "WebSocket" | "Vue" | "Astro"
+    'React' | 'Svelte' | 'Next.js' | 'Qt' | 'WebSocket' | 'Vue' | 'Astro'
 export type Technique =
-    "Test-Driven Development" | "Scrum" | "Git"
+    'Test-Driven Development' | 'Scrum' | 'Git'
 
 interface RankingScores {
     impressive: number
@@ -50,7 +50,7 @@ const projects: Project[] = [
     },
     {
         name: 'CourseKit',
-        languages: ['C++', 'F#', 'HTML', 'CSS', 'JavaScript', 'TypeScript'],
+        languages: ['C++', 'C#', 'F#', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'SQL'],
         platforms: ['Web', 'Linux', 'AWS'],
         techniques: ['Git'],
         mediaUrls: ['assets/coursekit-optimizer.png'],
@@ -66,25 +66,6 @@ const projects: Project[] = [
             original: 0.8,
             complex: 0.7,
             algorithmic: 0.6
-        }
-    },
-    {
-        name: 'Calories at UMich',
-        languages: ['HTML', 'CSS', 'JavaScript'],
-        frameworks: ['Svelte'],
-        techniques: [],
-        platforms: ['Web'],
-        mediaUrls: ['assets/umich-calories.jpeg'],
-        tagline: 'A web app that calculates the total Calorie count of user-specified meals at Michigan Dining',
-        description: 'This Svelte app uses the Tendiesti.me API to retrieve Michigan Dining menus. Users can select multiple menu items and see the sum of their Calories per serving.',
-        date: [2021, 2021],
-        link: 'https://umich-calories.vercel.app',
-        rank: {
-            impressive: 0.25,
-            collaborative: 0.05,
-            original: 0.4,
-            complex: 0.25,
-            algorithmic: 0.15
         }
     },
     {
@@ -268,7 +249,7 @@ const projects: Project[] = [
         rank: {
             impressive: 0.6,
             collaborative: 0.05,
-            original: 0.25,
+            original: 0.15,
             complex: 0.55,
             algorithmic: 0.35
         }
@@ -289,6 +270,24 @@ const projects: Project[] = [
             original: 0.35,
             complex: 0.3,
             algorithmic: 0.45
+        }
+    },
+    {
+        name: 'RecovAir',
+        languages: ['Rust', 'Python', 'TypeScript', 'SQL'],
+        techniques: ['Git'],
+        platforms: ['Web'],
+        frameworks: ['React'],
+        date: [2023, null],
+        tagline: 'An integrated Agent-Based Model for airline disruption recovery',
+        description: 'Motivated by the Southwest Airlines scheduling crisis in December 2022, I developed a novel agent-based model that simulates aircraft, crew, and passengers in a flight network under arbitrary disruptions and ad-hoc recovery mechanisms while recording Key Performance Indicators. I then used TypeScript, React, and Remix to build a web interface that can replay simulations and display recorded Key Performance Indicators over time for airline schedulers. RecovAir is featured in an upcoming conference paper at ICAS 2024 in collaboration with researchers at Michigan, MIT, and Harvard.',
+        link: 'https://github.com/broad-well/recovair-abm',
+        rank: {
+            impressive: 0.75,
+            collaborative: 0.3,
+            original: 0.25,
+            complex: 0.6,
+            algorithmic: 0.3
         }
     }
 ]
