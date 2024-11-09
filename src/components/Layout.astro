@@ -1,65 +1,77 @@
 ---
 export interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props as Props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-  <meta name="description" content="From web apps to CPU emulators, Broadwell's software projects illustrate his skills and diverse technical interests.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	<title>{title}</title>
-</head>
-<body class="p-4 mx-auto">
-	<slot />
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta
+            name="description"
+            content="From web apps to CPU emulators, Broadwell's software projects illustrate his skills and diverse technical interests."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <title>{title}</title>
+    </head>
+    <body class="p-4 mx-auto">
+        <slot />
+    </body>
 </html>
 
 <style>
-  :root {
-    --font-size-base: 1rem;
-    --color-text: hsl(12, 5%, 4%);
-    --bg-color: #fafafa;
-  }
-
-  @media (prefers-color-scheme: dark) {
     :root {
-      --color-text: rgb(239, 239, 239);
-      --bg-color: rgb(23, 23, 27);
+        --font-size-base: 1rem;
+        --color-text: hsl(12, 5%, 4%);
+        --bg-color: #fafafa;
     }
-  }
 
-  html {
-    font-family: 'Inter', system-ui, sans-serif !important;
-    font-size: var(--font-size-base);
-    color: var(--color-text);
-    background-color: var(--bg-color);
-  }
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --color-text: rgb(239, 239, 239);
+            --bg-color: rgb(23, 23, 27);
+        }
+    }
 
-  body {
-    margin: 0;
-  }
+    html {
+        font-family: "Inter", system-ui, sans-serif !important;
+        font-size: var(--font-size-base);
+        color: var(--color-text);
+        background-color: var(--bg-color);
+    }
 
-  :global(code) {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-  }
+    body {
+        margin: 0;
+    }
 
+    :global(code) {
+        font-family:
+            Menlo,
+            Monaco,
+            Lucida Console,
+            Liberation Mono,
+            DejaVu Sans Mono,
+            Bitstream Vera Sans Mono,
+            Courier New,
+            monospace;
+    }
 </style>
 <style lang="scss">
-  :global(.description) {
-    @apply text-gray-800 dark:text-gray-200;
-  }
+    :global(.description) {
+        @apply text-gray-800 dark:text-gray-200;
+    }
 
-  :global(.description a) {
-    @apply text-gray-600 dark:text-gray-300;
-  }
+    :global(.description a) {
+        @apply text-gray-600 dark:text-gray-300;
+    }
 </style>

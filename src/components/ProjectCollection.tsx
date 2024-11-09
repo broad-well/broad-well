@@ -61,8 +61,9 @@ export function ProjectCollection() {
         </select>)}
     </div>
     <main className="lg:flex lg:flex-wrap">
-        {projectList.length === 0 ? <i className="ml-6">No projects match the selected filters.</i> : 
-            projectList.map(p => <div key={p.name} className="xl:basis-1/2"><ProjectCard project={p} /></div>)}
+        {projectList.length === 0
+         ? <i className="ml-6">No projects match the selected filters.</i>
+         : projectList.map(p => <div key={p.name} className="xl:basis-1/2"><ProjectCard project={p} /></div>)}
     </main></>
 }
 
