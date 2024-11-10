@@ -280,12 +280,12 @@ const projects: Project[] = [
         frameworks: ['React'],
         date: [2023, null],
         tagline: 'An integrated Agent-Based Model for airline disruption recovery',
-        description: 'Motivated by the Southwest Airlines scheduling crisis in December 2022, I developed a novel agent-based model that simulates aircraft, crew, and passengers in a flight network under arbitrary disruptions and ad-hoc recovery mechanisms while recording Key Performance Indicators. I then used TypeScript, React, and Remix to build a web interface that can replay simulations and display recorded Key Performance Indicators over time for airline schedulers. RecovAir is featured in an upcoming conference paper at ICAS 2024 in collaboration with researchers at Michigan, MIT, and Harvard.',
+        description: 'Motivated by the Southwest Airlines scheduling crisis in December 2022, I developed a novel agent-based model that simulates aircraft, crew, and passengers in a flight network under arbitrary disruptions and ad-hoc recovery mechanisms while recording Key Performance Indicators. I then used TypeScript, React, and Remix to build a web interface that can replay simulations and display recorded Key Performance Indicators over time for airline schedulers. RecovAir was featured in a conference paper at ICAS 2024 in collaboration with researchers at Michigan, MIT, and Harvard. At IWAC 2024, RecovAir\'s paper was nominated for the Best Student Paper Award.',
         link: 'https://github.com/broad-well/recovair-abm',
         rank: {
-            impressive: 0.75,
+            impressive: 0.8,
             collaborative: 0.3,
-            original: 0.25,
+            original: 0.3,
             complex: 0.6,
             algorithmic: 0.3
         }
