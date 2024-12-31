@@ -37,10 +37,7 @@ function ProjectCard(props: { project: Project }) {
 						{project.date[0]}&ndash;{project.date[1] ?? "Present"}
 						{tags.length === 0 ? null : ` · ${tags.join(", ")}`}
 					</small>
-					<p
-						className="leading-tight description"
-						dangerouslySetInnerHTML={{ __html: project.description }}
-					/>
+					<p className="leading-tight description">{project.description}</p>
 				</div>
 				{project.mediaUrls !== undefined && project.mediaUrls.length > 0 ? (
 					<img

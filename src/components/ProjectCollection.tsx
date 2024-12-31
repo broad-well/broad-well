@@ -102,7 +102,7 @@ export function ProjectCollection() {
 					<i className="ml-6">No projects match the selected filters.</i>
 				) : (
 					projectList.map((p) => (
-						<div key={p.name} className="xl:basis-1/2">
+						<div key={p.name} className="xl:basis-1/2 basis-full">
 							<ProjectCard project={p} />
 						</div>
 					))
