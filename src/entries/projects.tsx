@@ -71,14 +71,14 @@ const projects: Project[] = [
 		),
 		description: (
 			<>
-				I collaborated with a team of 5 members at
+				I collaborated with a team of 5 members at{" "}
 				<a
 					href="https://studio.v1michigan.com/"
 					target="_blank"
 					rel="noreferrer"
 				>
 					V1 Product Studio
-				</a>
+				</a>{" "}
 				to design, build, and promote Plinq. Using React, I built an embedded
 				sidebar that helps users import contacts from LinkedIn.
 			</>

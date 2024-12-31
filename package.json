@@ -1,12 +1,14 @@
 {
 	"name": "broaderator",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"private": true,
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
-		"preview": "astro preview"
+		"preview": "astro preview",
+		"format": "biome format --write",
+		"lint": "biome lint"
 	},
 	"devDependencies": {
 		"@astrojs/react": "^4.1.2",
