@@ -1,9 +1,17 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://broaderator.com/",
-	integrations: [react(), tailwind()],
+	site: "https://broadwell.me/",
+	integrations: [react()],
+	image: {
+		layout: "constrained",
+		objectFit: "contain",
+		responsiveStyles: true,
+	},
+	vite: {
+		plugins: [tailwindcss()],
+	},
 });

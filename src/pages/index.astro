@@ -1,21 +1,112 @@
 ---
 import Layout from "../components/Layout.astro";
+import Direction from "../components/Direction.astro";
+import ProjectSign from "../components/ProjectSign.astro";
+import { Image } from "astro:assets";
 import { GitHub, Linkedin, Mail, FileText } from "react-feather";
-import ProjectCollection from "../components/ProjectCollection";
+
+import coursekit from "../images/coursekit-logo.png";
+import recovair from "../images/recovair-diagram.png";
 ---
 
-<Layout title="Broadwell's Projects">
-    <header class="p-6">
-        <h1 class="text-3xl font-bold mb-2">Broadwell's Projects</h1>
-        <div class="flex">
+<Layout title="Broadwell.me">
+    <div class="h-8 justify-center gap-[80%] pagewidth hidden md:flex">
+      <div class="w-2 bg-gradient-to-r from-gray-600 to-gray-400 h-full"></div>
+      <div class="w-2 bg-gradient-to-r from-gray-600 to-gray-400 h-full"></div>
+    </div>
+    <header class="flex flex-row signage pagewidth mt-2 md:mt-0">
+      <Direction dir="down" />
+      <div class="p-4">
+        <h1 class="text-3xl font-bold">Michael Peng</h1>
+        <p>Michael (Broadwell) is a junior software engineer at Google Cloud in Seattle pursuing new ways for computers to make life more efficient and delightful.
+          He is interested in aviation, electric vehicles, urbanism, and birding.</p>
+        <div class="flex flex-wrap social-icons mt-2">
             <a class="mr-2" href="https://github.com/broad-well" target="_self" aria-label="GitHub"><GitHub /></a>
             <a class="mr-2" href="https://www.linkedin.com/in/michael-peng-0a669617b/" target="_self" aria-label="LinkedIn"><Linkedin /></a>
-            <a class="mr-2" href="mailto:broadwell+broaderator@broaderator.com" aria-label="Email"><Mail /></a>
+            <a class="mr-2" href="mailto:hello@broadwell.me" aria-label="Email"><Mail /></a>
             <a href="assets/complete.pdf" target="_blank" aria-label="Resume"><FileText /></a>
         </div>
+      </div>
     </header>
-    <ProjectCollection client:idle />
-    <footer class="p-4 text-right">
-        &copy; 2025 Michael Peng
+    <section id="narrative" class="pagewidth pt-2">
+      <h1 class="text-2xl font-bold mb-2">Projects</h1>
+      <div class="grid grid-cols-1 gap-4">
+        <ProjectSign title="CourseKit" how="Python, C++, React on AWS RDS, Lambda, EC2" link="https://github.com/UseCourseKit">
+          <Image slot="image" src={coursekit} alt="CourseKit logo" width={100} height={100} />
+          <p slot="description">
+            CourseKit was a course enrollment toolkit for the University of Michigan.
+            It tapped enrollment trends from an official API for 2 years to help estimate enrollment success rate for any class.
+            It searched, rated, and ranked millions of possible schedules for more than 500 users to optimize their schedules.
+          </p>
+        </ProjectSign>
+        <ProjectSign title="RecovAir" how="Python, Rust, Plotly" link="https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2025.1545491/full">
+          <Image slot="image" src={recovair} alt="RecovAir ABM component diagram" width={150} height={150} />
+          <p slot="description">
+            Started by Michael, this <a class="descriptionref" href="https://sites.google.com/umich.edu/lattice/home" target="_blank">LATTICE</a> project investigated the <a class="descriptionref" href="https://en.wikipedia.org/wiki/2022_Southwest_Airlines_scheduling_crisis" target="_blank">2022 Southwest Airlines scheduling crisis</a> with Armaan Kamat (Michigan),
+            Van Tran (Harvard), Charles Dawson (MIT), Dr. Max Li (Michigan), and Dr. Chuchu Fan (MIT).
+            RecovAir simulates the flow of aircraft, passengers, and crew in an airline network in response to arbitrary disruptions.
+            Papers were published in <a class="descriptionref" href="https://www.icas.org/icas_archive/icas2024/data/preview/icas2024_0782.htm" target="_blank">ICAS 2024</a>,
+            <a class="descriptionref" href="https://iwac2024.org/program.html#:~:text=T2%2D3%2DA-,RecovAir,-:%20Model%2DDriven%20Airline">IWAC 2024</a>, and
+            <a class="descriptionref" href="https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2025.1545491/full">Frontiers in Built Environment</a>.
+          </p>
+        </ProjectSign>
+        <ProjectSign title="Shifter" how="Google Apps Script (TypeScript)" link="https://broadwell.notion.site/Shifter-Documentation-56aff1ae197544369bb8fcb798d6663c">
+          <p slot="description">
+            Every term, Escher House's Work Manager builds a housewide work schedule based on member availability and preferences.
+            Shifter is a Google Sheets add-on in TypeScript that formulates work schedule construction as a linear program
+            and solves the program using <code>LinearOptimizationService</code>.
+            Escher's Work Manager used Shifter to generate its work schedule for 166 house members in Fall 2023 and Winter 2024.
+          </p>
+        </ProjectSign>
+        <ProjectSign title="CSE 29 Unix Calendar PA" how="C, Python (Autograder)" link="https://cse29spring2025.github.io/pa2">
+          <p slot="description">
+            This Programming Assignment in CSE 29 (Systems Programming and Software Tools) at UC San Diego challenges students to implement
+            singly linked list operations and use them to develop a command-line calendar program.
+            In Spring 2025, Michael led a team of 4 tutors to create this PA from scratch. This PA was reused in Spring 2026.
+          </p>
+        </ProjectSign>
+        <p>Find more projects in Michael's <a class="descriptionref" href="assets/complete.pdf">résumé</a>.</p>
+      </div>
+    </section>
+    <footer class="pagewidth flex justify-center items-center my-4">
+      <div class="signage flex items-center gap-4">
+        <a href="https://kytrinh.me/gathering/broadwell/previous" class="p-2 text-2xl bg-accent text-white black font-bold text-center items-center flex">
+          &larr;
+        </a>
+        <p>
+          <a href="https://kytrinh.me/gathering">gathering</a>
+        </p>
+        <a href="https://kytrinh.me/gathering/broadwell/next" class="p-2 text-2xl bg-accent text-white black font-bold text-center items-center flex">
+          &rarr;
+        </a>
+      </div>
     </footer>
 </Layout>
+<style>
+  @import "tailwindcss";
+  .social-icons a {
+    @apply p-2;
+    @apply bg-gray-300;
+    @apply dark:bg-gray-700;
+    @apply rounded-full;
+    @apply hover:shadow-md;
+    @apply active:translate-y-0.5;
+    @apply active:shadow-none;
+    @apply transition-all;
+  }
+  .pagewidth {
+    @apply max-w-screen-lg;
+    @apply w-full;
+  }
+  #narrative h1 {
+    @apply mt-2;
+  }
+  .descriptionref {
+    @apply underline;
+    @apply text-gray-700;
+    @apply dark:text-gray-400;
+  }
+  #gathering a {
+
+  }
+</style>

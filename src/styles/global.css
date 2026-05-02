@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+	--color-accent: oklch(43.7% 0.078 188.216);
+}
+
+.signage {
+	background-color: rgba(180, 180, 180, 0.2);
+	border-radius: 8px;
+	overflow: hidden;
+	@apply ring-gray-900/20;
+	@apply ring;
+	/*@apply shadow-lg;*/
+	/*@apply drop-shadow-lg;*/
+
+	@apply shadow-gray-300;
+	@apply dark:shadow-gray-400/30;
+	box-shadow: 3px 3px var(--tw-shadow-color);
+}

@@ -1,0 +1,21 @@
+---
+export interface Props {
+	dir: "down" | "right" | "upright" | "left";
+	link?: string;
+}
+const dir = {
+	right: "→",
+	left: "←",
+	down: "↓",
+	upright: "↗",
+}[Astro.props.dir];
+---
+
+{Astro.props.link ?
+<a href={Astro.props.link} target="_blank" class="p-2 text-2xl md:p-4 bg-accent text-white black md:text-5xl font-bold text-center items-center flex">
+  {dir}
+</a>
+:
+<div class="p-2 text-2xl md:p-4 bg-accent text-white black md:text-5xl font-bold text-center items-center flex">
+  {dir}
+</div>}
