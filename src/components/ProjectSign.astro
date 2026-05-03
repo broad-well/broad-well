@@ -10,7 +10,7 @@ const { title, link, how } = Astro.props;
 ---
 
 <div class="signage flex flex-row">
-  <div class="flex-1 p-4 flex gap-4 items-start">
+  <div class="flex-1 p-4 flex flex-col md:flex-row gap-4 items-start">
     <div>
       <h2 class="text-xl">{title}</h2>
       <div class="text-sm mb-1">{how}</div>
